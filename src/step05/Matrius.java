@@ -2,6 +2,8 @@ package step05;
 
 public class Matrius {
 
+    // Matrius constants que representen les figures de diferents tipus
+
     public static final int[][] matrizI =  {{0,0,1,0},
                                             {0,0,1,0},
                                             {0,0,1,0},
@@ -31,7 +33,7 @@ public class Matrius {
                                            {1,1}};
 
 
-    // Copia d'una matriu
+    // Retorna una còpia exacte d'una matriu (dimensions i contingut)
     public static int[][] copiaMatriu(int[][] input){
         int[][] output = new int[input.length][input[0].length];
         for(int f=0; f<input.length; f++){

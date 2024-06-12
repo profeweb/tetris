@@ -2,26 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="880bcb6c-0f8b-43c1-afd8-65a3efe44e47" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/library.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TetrisPOO.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/step05/Colors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/step05/FigList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/step05/Figura.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/step05/FiguraI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/step05/FiguraL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/step05/FiguraLI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/step05/FiguraO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/step05/FiguraS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/step05/FiguraSI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/step05/FiguraT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/step05/Matrius.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/step05/Tauler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/step05/Tetris.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step05/Colors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step05/Colors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step05/FigList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step05/LlistaFigures.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step05/Figura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step05/Figura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step05/FiguraI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step05/FiguraI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step05/FiguraL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step05/FiguraL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step05/FiguraLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step05/FiguraLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step05/FiguraO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step05/FiguraO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step05/FiguraS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step05/FiguraS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step05/FiguraSI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step05/FiguraSI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step05/FiguraT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step05/FiguraT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step05/Matrius.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step05/Matrius.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step05/Tauler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step05/Tauler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step05/Tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step05/Tetris.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,25 +41,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Program Files/processing354/processing-3.5.4/core/library",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/processing354/processing-3.5.4/core/library&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="step05" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Tetris" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="step05.Tetris" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="step05.Tetris" />
       <module name="TetrisPOO" />
       <extension name="coverage">
@@ -80,7 +74,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Tetris" />
+        <item itemvalue="Application.step05.Tetris" />
       </list>
     </recent_temporary>
   </component>
@@ -92,11 +86,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1718096196179</updated>
-      <workItem from="1718096198403" duration="3765000" />
+      <workItem from="1718096198403" duration="4357000" />
+      <workItem from="1718172616185" duration="3251000" />
+      <workItem from="1718179577933" duration="3432000" />
+      <workItem from="1718190770794" duration="762000" />
     </task>
+    <task id="LOCAL-00001" summary="Tetris">
+      <created>1718100011974</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718100011974</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Tetris" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tetris" />
   </component>
 </project>
