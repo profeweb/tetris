@@ -5,10 +5,10 @@ import processing.core.PApplet;
 public class Figura {
 
     // Enumerat amb els tipus de figures
-    public enum TIPUS { BUIDA, I, S, SI, T, L, LI, O}
+    public enum TIPUS_FIGURA { BUIDA, I, S, SI, T, L, LI, O}
 
     // Tipus de la figura
-    TIPUS tipus;
+    TIPUS_FIGURA tipusFigura;
 
     // Matriu per emmagetzemar la figura
     int[][] matriu;
@@ -17,9 +17,9 @@ public class Figura {
     int fila, col;
 
     // Constructor de la figura, indicant-li la matriu i el tipus.
-    Figura(int[][] quadres, TIPUS t){
-        this.matriu = Matrius.copiaMatriu(quadres);
-        this.tipus = t;
+    Figura(int[][] matriu, TIPUS_FIGURA t){
+        this.matriu = matriu; //Matrius.copiaMatriu(matriu);
+        this.tipusFigura = t;
     }
 
     // Mètode setter de la posició (fila, columna) de la figura.
@@ -29,8 +29,8 @@ public class Figura {
     }
 
     // Métode setter del tipus de figura.
-    void setTipus(TIPUS tipus){
-        this.tipus = tipus;
+    void setTipusFigura(TIPUS_FIGURA tipusFigura){
+        this.tipusFigura = tipusFigura;
     }
 
     // Retorna la columna màxima que ocupa una figura
@@ -115,7 +115,7 @@ public class Figura {
         for(int f = 0; f< matriu.length; f++){
             for(int c = 0; c< matriu[0].length; c++){
                 //println("MIRANT FILA: "+(ff+f)+", I COL:"+(cf+c));
-                if(matriu[f][c]!=0 && t.caselles[ff+f][cf+c]!=TIPUS.BUIDA){
+                if(matriu[f][c]!=0 && t.caselles[ff+f][cf+c]!= TIPUS_FIGURA.BUIDA){
                     //println("OCUPADA");
                     return false;
                 }
@@ -149,7 +149,7 @@ public class Figura {
     // Determina si la figura es pot moure cap a baix en el tauler
     boolean mouBaix(Tauler t){
 
-        if(this.fila + this.getMaxFil() < t.numFils - 1){
+        if(this.fila + this.getMaxFil() < t.numFiles - 1){
             int newFila = this.fila + 1;
             if(posicioLliure(t, newFila, this.col)){
                 this.fila++;
@@ -191,12 +191,12 @@ public class Figura {
 
     // Mètode per crear una figura aleatòria
     public static Figura creaFiguraRandom(PApplet p5, Tauler tauler){
-        int n  = (int) p5.random(0, TIPUS.values().length);
-        return creaFigura(p5, TIPUS.values()[n], tauler);
+        int n  = (int) p5.random(0, TIPUS_FIGURA.values().length);
+        return creaFigura(p5, TIPUS_FIGURA.values()[n], tauler);
     }
 
     // Mètode que crea una figura d'un determinat tipus i la posiciona en el tauler a la fila inicial i en una columna aleatòria.
-    public static Figura creaFigura(PApplet p5, TIPUS tipus, Tauler tauler){
+    public static Figura creaFigura(PApplet p5, TIPUS_FIGURA tipus, Tauler tauler){
 
         int f = 0;  // primera fila
         int rc = (int) p5.random(0, tauler.numCols-4);  // columna aleatòria

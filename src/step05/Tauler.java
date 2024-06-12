@@ -8,13 +8,13 @@ public class Tauler {
     int x, y;
 
     // Número de columnes i files del tauler
-    int numCols, numFils;
+    int numCols, numFiles;
 
     // Mides (amplada i altura) de les caselles del tauler
-    float cellWidth, cellHeight;
+    float ampleCella, altCella;
 
     // Array de caselles guardant el tipus de figura
-    Figura.TIPUS[][] caselles;
+    Figura.TIPUS_FIGURA[][] caselles;
 
     // Array de figures en el tauler
     Figura[] figures;
@@ -27,13 +27,13 @@ public class Tauler {
     Tauler(int nc, int nf, int x, int y, int w, int h){
 
         this.numCols = nc;
-        this.numFils = nf;
+        this.numFiles = nf;
         this.x = x;
         this.y = y;
 
-        // Caalcula l'amaplada i altura de les caselles del tauler
-        this.cellWidth = w/(float)numCols;
-        this.cellHeight = h/(float)numFils;
+        // Calcula l'amplada i altura de les caselles del tauler
+        this.ampleCella = w/(float)numCols;
+        this.altCella = h/(float) numFiles;
 
         // Crea l'array de figures
         figures = new Figura[maxNumFigures];
@@ -63,10 +63,10 @@ public class Tauler {
 
     // Crear i inicialitza totes les caselles del tauler amb el valor BUIDA
     void inicialitzaCaselles(){
-        caselles = new Figura.TIPUS[numFils][numCols];
+        caselles = new Figura.TIPUS_FIGURA[numFiles][numCols];
         for(int c=0; c<numCols; c++){
-            for(int f=0; f<numFils; f++){
-                caselles[f][c]= Figura.TIPUS.BUIDA;
+            for(int f = 0; f< numFiles; f++){
+                caselles[f][c]= Figura.TIPUS_FIGURA.BUIDA;
             }
         }
     }
@@ -80,10 +80,10 @@ public class Tauler {
     // Dibuixa les línies del tauler
     void dibuixaGraella(PApplet p5, int colorBUIT){
         for(float c=0; c<numCols; c++){
-            for(float f=0; f<numFils; f++){
+            for(float f = 0; f< numFiles; f++){
                 p5.fill(colorBUIT);
                 p5.stroke(0);
-                p5.rect(c*cellWidth, f*cellHeight, cellWidth, cellHeight);
+                p5.rect(c* ampleCella, f* altCella, ampleCella, altCella);
             }
         }
     }
@@ -91,14 +91,14 @@ public class Tauler {
     // Dibuixa les caselles del tauler del color corresponent
     void dibuixaCaselles(PApplet p5, int colorBUIT, int[] colors){
         for(int c=0; c<numCols; c++){
-            for(int f=0; f<numFils; f++){
+            for(int f = 0; f< numFiles; f++){
                 p5.fill(colorBUIT);
-                if(caselles[f][c]!= Figura.TIPUS.BUIDA){
+                if(caselles[f][c]!= Figura.TIPUS_FIGURA.BUIDA){
                     int numColor = caselles[f][c].ordinal();
                     p5.fill(colors[numColor]);
                 }
                 p5.stroke(0);
-                p5.rect(c*cellWidth, f*cellHeight, cellWidth, cellHeight);
+                p5.rect(c* ampleCella, f* altCella, ampleCella, altCella);
             }
         }
     }
@@ -111,7 +111,7 @@ public class Tauler {
                 if(fig.matriu[f][c]==1){
                     int ct = c + fig.col;
                     int ft = f + fig.fila;
-                    this.caselles[ft][ct] = fig.tipus;
+                    this.caselles[ft][ct] = fig.tipusFigura;
                 }
             }
         }
@@ -124,9 +124,9 @@ public class Tauler {
                 int ct = c + fig.col;
                 int ft = f + fig.fila;
                 if(fig.matriu[f][c]==1){
-                    p5.fill(colors[fig.tipus.ordinal()]);
+                    p5.fill(colors[fig.tipusFigura.ordinal()]);
                     p5.stroke(0);
-                    p5.rect(ct*cellWidth, ft*cellHeight, cellWidth, cellHeight);
+                    p5.rect(ct* ampleCella, ft* altCella, ampleCella, altCella);
                 }
             }
         }
@@ -144,7 +144,7 @@ public class Tauler {
     // Determina si una fila nf té totes les caselles plenes amb alguna figura
     boolean filaPlena(int nf){
         for(int c = 0; c< caselles[nf].length; c++){
-            if(caselles[nf][c]== Figura.TIPUS.BUIDA){
+            if(caselles[nf][c]== Figura.TIPUS_FIGURA.BUIDA){
                 return false;
             }
         }
@@ -163,7 +163,7 @@ public class Tauler {
 
         // Buidar fila zero
         for(int c = 0; c < caselles[0].length; c++){
-            caselles[0][c] = Figura.TIPUS.BUIDA;
+            caselles[0][c] = Figura.TIPUS_FIGURA.BUIDA;
         }
 
     }
