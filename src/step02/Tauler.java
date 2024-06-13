@@ -1,4 +1,4 @@
-package step01;
+package step02;
 
 import processing.core.PApplet;
 
@@ -48,6 +48,19 @@ public class Tauler {
                 p5.fill(colorBUIT);
                 p5.stroke(0);
                 p5.rect(c* ampleCella, f* altCella, ampleCella, altCella);
+            }
+        }
+    }
+
+    // Aplica una figura al tauler, posant les caselles que ocupa al tipus de la figura.
+    void aplica(Figura fig){
+        for(int f = 0; f<fig.matriu.length; f++){
+            for(int c = 0; c<fig.matriu[0].length; c++){
+                if(fig.matriu[f][c]==1){
+                    int ct = c + fig.col;
+                    int ft = f + fig.fila;
+                    this.caselles[ft][ct] = fig.tipusFigura;
+                }
             }
         }
     }
