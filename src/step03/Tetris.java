@@ -1,4 +1,4 @@
-package step02;
+package step03;
 
 import processing.core.PApplet;
 
@@ -18,7 +18,7 @@ public class Tetris extends PApplet {
     }
 
     public static void main(String[] args) {
-        PApplet.main("step02.Tetris");
+        PApplet.main("step03.Tetris");
     }
 
     public void setup(){
@@ -80,7 +80,7 @@ public class Tetris extends PApplet {
             t.dibuixaFigura(this, f5, colorsTetris.colors);
             t.dibuixaFigura(this, f6, colorsTetris.colors);
             t.dibuixaFigura(this, f7, colorsTetris.colors);
-
+            
         popMatrix();
 
     }
