@@ -16,7 +16,7 @@ public class Figura {
 
     // Constructor de la figura, indicant-li la matriu i el tipus.
     Figura(int[][] matriu, TIPUS_FIGURA t){
-        this.matriu = matriu; //Matrius.copiaMatriu(matriu);
+        this.matriu = matriu;
         this.tipusFigura = t;
     }
 

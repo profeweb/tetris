@@ -65,4 +65,20 @@ public class Tauler {
         }
     }
 
+    // Dibuixa una determinada figura en el tauler
+    void dibuixaFigura(PApplet p5, Figura fig, int[] colors){
+        for(int f = 0; f<fig.matriu.length; f++){
+            for(int c = 0; c<fig.matriu[0].length; c++){
+                int ct = c + fig.col;
+                int ft = f + fig.fila;
+                if(fig.matriu[f][c]==1){
+                    p5.fill(colors[fig.tipusFigura.ordinal()]);
+                    p5.stroke(0);
+                    p5.rect(ct*ampleCella, ft*altCella,ampleCella,altCella);
+                }
+            }
+        }
+    }
+
+
 }
