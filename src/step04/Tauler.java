@@ -1,4 +1,4 @@
-package step03;
+package step04;
 
 import processing.core.PApplet;
 
