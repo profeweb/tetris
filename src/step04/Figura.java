@@ -33,18 +33,6 @@ public class Figura {
         this.tipusFigura = tipusFigura;
     }
 
-    // Determina si la posicions en el tauler estan lliure per posar-hi la figura
-    boolean posicioLliure(Tauler t, int ff, int cf){
-        for(int f = 0; f< matriu.length; f++){
-            for(int c = 0; c< matriu[0].length; c++){
-                if(matriu[f][c]!=0 && t.caselles[ff+f][cf+c]!= Figura.TIPUS_FIGURA.BUIDA){
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-
     // Mètode que crea una figura d'un determinat tipus i la posiciona en el tauler en una la fila i columna aleatòria.
     public static Figura creaFigura(PApplet p5, Figura.TIPUS_FIGURA tipus, Tauler t){
 

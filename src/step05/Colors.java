@@ -4,8 +4,11 @@ import processing.core.PApplet;
 
 public class Colors {
 
-    // Colors de les caselles en estar buides o contenint una figura de cert tipus
-    int colorBUIT, colorI, colorO, colorS, colorSI, colorT, colorL, colorLI;
+    // Colors de les caselles en estar buides.
+    int colorBUIT;
+
+    // Colors de les caselles contenint una figura de cert tipus
+    int colorI, colorO, colorS, colorSI, colorT, colorL, colorLI;
 
     // Array amb tots els colors
     int[] colors;
@@ -13,18 +16,21 @@ public class Colors {
     // Constructor
     public Colors(PApplet p5){
 
+        // Definieix els colors de le figures i de caselles buides
+        colorBUIT   = p5.color(255);
+        colorI      = p5.color(0,255,255);
+        colorO      = p5.color(0,0,255);
+        colorS      = p5.color(255,0,255);
+        colorSI     = p5.color(155,0,155);
+        colorT      = p5.color(0,255,0);
+        colorL      = p5.color(255,255,0);
+        colorLI     = p5.color(155,155,0);
+
+
         // Crea l'array de colors amb les 8 caselles
         colors = new int[8];
 
-        colorBUIT = p5.color(255);
-        colorI = p5.color(0,255,255);
-        colorO = p5.color(0,0,255);
-        colorS = p5.color(255,0,255);
-        colorSI = p5.color(155,0,155);
-        colorT = p5.color(0,255,0);
-        colorL = p5.color(255,255,0);
-        colorLI = p5.color(155,155,0);
-
+        // Posam dins cada casella de l'array el color corresponent
         colors[0] = colorBUIT;
         colors[1] = colorI;
         colors[2] = colorO;

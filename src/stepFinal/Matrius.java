@@ -1,4 +1,4 @@
-package step05;
+package stepFinal;
 
 public class Matrius {
 
@@ -32,4 +32,15 @@ public class Matrius {
     public static final int[][] matrizO =  {{1,1},
                                            {1,1}};
 
+
+    // Retorna una còpia exacte d'una matriu (dimensions i contingut)
+    public static int[][] copiaMatriu(int[][] input){
+        int[][] output = new int[input.length][input[0].length];
+        for(int f=0; f<input.length; f++){
+            for(int c=0; c<input[0].length; c++){
+                output[f][c] = input[f][c];
+            }
+        }
+        return output;
+    }
 }
