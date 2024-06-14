@@ -1,4 +1,4 @@
-package step05;
+package step06;
 
 import processing.core.PApplet;
 
@@ -21,7 +21,7 @@ public class Tetris extends PApplet {
     }
 
     public static void main(String[] args) {
-        PApplet.main("step05.Tetris");
+        PApplet.main("step06.Tetris");
     }
 
     public void setup(){

@@ -64,10 +64,10 @@ public class Figura {
     }
 
     // Determina si la posicions en el tauler estan lliure per posar-hi la figura
-    boolean posicioLliure(Tauler t){
+    boolean posicioLliure(Tauler t, int ff, int cf){
         for(int f = 0; f< matriu.length; f++){
             for(int c = 0; c< matriu[0].length; c++){
-                if(matriu[f][c]!=0 && t.caselles[this.fila+f][this.col+c]!= TIPUS_FIGURA.BUIDA){
+                if(matriu[f][c]!=0 && t.caselles[ff+f][cf+c]!= Figura.TIPUS_FIGURA.BUIDA){
                     return false;
                 }
             }
