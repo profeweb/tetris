@@ -16,14 +16,18 @@ public class Tetris extends PApplet {
     // Comptador de figures
     int numFigures = 0;
 
-    Figura f;
+    // Figura actual de la partida
+    Figura figActual;
+
+    // Velocitat de les figures en baixar
+    int speed = 30;
 
     public void settings(){
         size(800, 800);
     }
 
     public static void main(String[] args) {
-        PApplet.main("step06.Tetris");
+        PApplet.main("step07.Tetris");
     }
 
     public void setup(){
@@ -40,54 +44,61 @@ public class Tetris extends PApplet {
         figures = new Figura[10];
 
         // Crea una figura aleatòria a la primera fila del tauler
-        Figura f = Figura.creaFiguraRandom(this, t);
-        figures[numFigures] = f;
-        numFigures++;
+        figActual = Figura.creaFiguraRandom(this, t);
 
     }
 
     public void draw(){
 
+        // Lògica del joc
+        if (frameCount % speed == 30) {
+            if(!figActual.mouBaix(t)){
+                t.afegirFigura(figActual);
+                t.aplica(figActual);
+                figActual = Figura.creaFiguraRandom(this, t);
+            }
+        }
+
+        // Dibuix dels elements del joc
+        dibuixaJOC();
+    }
+
+    public void dibuixaJOC(){
         // Dibuixa el fons
         background(200);
 
         // Dibuixa escenari de joc
         pushMatrix();
 
-            // Es trasllada a la posició (x, y) del tauler
-            translate(t.x, t.y);
+        // Es trasllada a la posició (x, y) del tauler
+        translate(t.x, t.y);
 
-            // Dibuixa la graella del tauler.
-            t.dibuixaGraella(this,colorsTetris.colorBUIT);
+        // Dibuixa la graella del tauler.
+        t.dibuixaGraella(this,colorsTetris.colorBUIT);
 
-            // Dibuixa les figures de l'array
-            for(int i=0; i<numFigures; i++) {
-                t.dibuixaFigura(this, figures[i], colorsTetris.colors);
-            }
-            
+        // Dibuixa la figura actual
+        t.dibuixaFigura(this, figActual, colorsTetris.colors);
+
         popMatrix();
-
     }
 
     public void keyPressed(){
         if(keyCode==LEFT){
-            figures[0].mouEsquerra(t);
+            figActual.mouEsquerra(t);
         }
         else if(keyCode==RIGHT){
-            figures[0].mouDreta(t);
+            figActual.mouDreta(t);
         }
         else if(keyCode==DOWN){
-            figures[0].mouBaix(t);
+            figActual.mouBaix(t);
         }
         else if(key=='b' || key=='B'){
-            figures[0].mouTopeBaix(t);
+            figActual.mouTopeBaix(t);
         }
         else if(key=='r' || key=='R'){
             numFigures = 0;
             t.inicialitzaCaselles();
-            Figura f = Figura.creaFiguraRandom(this, t);
-            figures[numFigures] = f;
-            numFigures++;
+            figActual = Figura.creaFiguraRandom(this, t);
         }
     }
 
