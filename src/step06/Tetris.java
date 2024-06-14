@@ -16,6 +16,8 @@ public class Tetris extends PApplet {
     // Comptador de figures
     int numFigures = 0;
 
+    Figura f;
+
     public void settings(){
         size(800, 800);
     }
@@ -37,15 +39,10 @@ public class Tetris extends PApplet {
         // Cream l'array per guardar 10 figures
         figures = new Figura[10];
 
-        // Crea 10 figures aleatòries evitant solapament
-        while(numFigures<10){
-            Figura f = Figura.creaFiguraRandom(this, t);
-            if(f.posicioLliure(t, f.fila, f.col)){
-                t.aplicaFigura(f);
-                figures[numFigures] = f;
-                numFigures++;
-            }
-        }
+        // Crea una figura aleatòria a la primera fila del tauler
+        Figura f = Figura.creaFiguraRandom(this, t);
+        figures[numFigures] = f;
+        numFigures++;
 
     }
 
@@ -64,7 +61,7 @@ public class Tetris extends PApplet {
             t.dibuixaGraella(this,colorsTetris.colorBUIT);
 
             // Dibuixa les figures de l'array
-            for(int i=0; i<figures.length; i++) {
+            for(int i=0; i<numFigures; i++) {
                 t.dibuixaFigura(this, figures[i], colorsTetris.colors);
             }
             
@@ -73,17 +70,24 @@ public class Tetris extends PApplet {
     }
 
     public void keyPressed(){
-        if(key=='r' || key=='R'){
+        if(keyCode==LEFT){
+            figures[0].mouEsquerra(t);
+        }
+        else if(keyCode==RIGHT){
+            figures[0].mouDreta(t);
+        }
+        else if(keyCode==DOWN){
+            figures[0].mouBaix(t);
+        }
+        else if(key=='b' || key=='B'){
+            figures[0].mouTopeBaix(t);
+        }
+        else if(key=='r' || key=='R'){
             numFigures = 0;
             t.inicialitzaCaselles();
-            while(numFigures<10){
-                Figura f = Figura.creaFiguraRandom(this, t);
-                if(f.posicioLliure(t, f.fila, f.col)){
-                    t.aplicaFigura(f);
-                    figures[numFigures] = f;
-                    numFigures++;
-                }
-            }
+            Figura f = Figura.creaFiguraRandom(this, t);
+            figures[numFigures] = f;
+            numFigures++;
         }
     }
 

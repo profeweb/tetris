@@ -36,7 +36,7 @@ public class Figura {
     // Mètode que crea una figura d'un determinat tipus i la posiciona en el tauler en una la fila i columna aleatòria.
     public static Figura creaFigura(PApplet p5, TIPUS_FIGURA tipus, Tauler t){
 
-        int f = (int) p5.random(0, t.numFiles - 4);  // fila aleatòria
+        int f = 0;  // Primera fila (0)
         int c = (int) p5.random(0, t.numCols - 4);  // columna aleatòria
 
         Figura fig;
@@ -133,13 +133,8 @@ public class Figura {
     // Mou la figura cap a l'esquerra en el tauler
     void mouEsquerra(Tauler t){
         if(this.col + this.getMinCol() > 0){
-            //println("COL:"+this.col+",FILA: "+this.fila);
-
             int newCol = this.col - 1;
-
-            System.out.println("COL DESTI:"+newCol);
             if(posicioLliure(t, this.fila, newCol)){
-                System.out.println("SE POT MOURE");
                 this.col--;
             }
         }
@@ -148,7 +143,10 @@ public class Figura {
     // Mou la figura cap a la dreta en el tauler
     void mouDreta(Tauler t){
         if(this.col + this.getMaxCol() < t.numCols - 1){
-            this.col++;
+            int newCol = this.col + 1;
+            if(posicioLliure(t, this.fila, newCol)) {
+                this.col++;
+            }
         }
     }
 

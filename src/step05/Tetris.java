@@ -64,7 +64,7 @@ public class Tetris extends PApplet {
             t.dibuixaGraella(this,colorsTetris.colorBUIT);
 
             // Dibuixa les figures de l'array
-            for(int i=0; i<figures.length; i++) {
+            for(int i=0; i<numFigures; i++) {
                 t.dibuixaFigura(this, figures[i], colorsTetris.colors);
             }
             
