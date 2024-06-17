@@ -53,8 +53,8 @@ public class Tetris extends PApplet {
         // Lògica del joc
         if (frameCount % speed == 30) {
             if(!figActual.mouBaix(t)){
-                t.afegirFigura(figActual);
-                t.aplica(figActual);
+                //t.afegirFigura(figActual);
+                //t.aplica(figActual);
                 figActual = Figura.creaFiguraRandom(this, t);
             }
         }
