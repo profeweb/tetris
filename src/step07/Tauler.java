@@ -16,6 +16,13 @@ public class Tauler {
     // Array de caselles guardant el tipus de figura
     Figura.TIPUS_FIGURA[][] caselles;
 
+    // Array de figures en el tauler
+    Figura[] figures;
+    // Número màxim de figures d'una partida
+    final int maxNumFigures = 100;
+    // Número de figures actual.
+    int numFigures;
+
 
     // Constructor
     Tauler(int nc, int nf, int x, int y, int w, int h){
@@ -28,6 +35,11 @@ public class Tauler {
         // Calcula l'amplada i altura de les caselles del tauler
         this.ampleCella = w/(float)numCols;
         this.altCella = h/(float) numFiles;
+
+        // Crea l'array de figures
+        figures = new Figura[maxNumFigures];
+        // Inicialment no hi ha figures bloquejades
+        numFigures = 0;
     }
 
     // Crear i inicialitza totes les caselles del tauler amb el valor BUIDA
@@ -77,6 +89,34 @@ public class Tauler {
                     this.caselles[ft][ct] = fig.tipusFigura;
                 }
             }
+        }
+    }
+
+    // Imprimeix el contingut del tauler a la cónsola
+    public void printTauler(){
+        System.out.println("\nESTAT DEL TAULER: ");
+        for(int f = 0; f< numFiles; f++){
+            for(int c=0; c<numCols; c++){
+                if(caselles[f][c] != Figura.TIPUS_FIGURA.BUIDA) {
+                    System.out.print(caselles[f][c]);
+                }
+                System.out.print("\t|");
+            }
+            System.out.println();
+        }
+    }
+
+    void afegirFigura(Figura f){
+        if(numFigures<maxNumFigures) {
+            figures[numFigures] = f;
+            numFigures++;
+        }
+    }
+
+    // Dibuixa les figures guardades en l'array figures
+    void dibuixaFigures(PApplet p5, int[] colors){
+        for(int i=0; i<numFigures; i++){
+            dibuixaFigura(p5, figures[i], colors);
         }
     }
 

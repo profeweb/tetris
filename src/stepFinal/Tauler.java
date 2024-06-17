@@ -103,6 +103,13 @@ public class Tauler {
         }
     }
 
+    // Dibuixa les figures guardades en l'array figures
+    void dibuixaFigures(PApplet p5, int[] colors){
+        for(int i=0; i<numFigures; i++){
+            dibuixaFigura(p5, figures[i], colors);
+        }
+    }
+
 
     // Aplica una figura al tauler, posant les caselles que ocupa al tipus de la figura.
     void aplica(Figura fig){

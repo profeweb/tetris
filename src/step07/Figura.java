@@ -16,6 +16,15 @@ public class Figura {
     // Fila i columna superior esquerra de la figura
     int fila, col;
 
+    // Array de figures en el tauler
+    Figura[] figures;
+
+    // Número màxim de figures d'una partida
+    final int maxNumFigures = 100;
+
+    // Número de figures actual.
+    int numFigures;
+
     // Constructor de la figura, indicant-li la matriu i el tipus.
     Figura(int[][] matriu, TIPUS_FIGURA t){
         this.matriu = matriu;
@@ -68,7 +77,7 @@ public class Figura {
         for(int f = 0; f< matriu.length; f++){
             for(int c = 0; c< matriu[0].length; c++){
                 //println("MIRANT FILA: "+(ff+f)+", I COL:"+(cf+c));
-                if(matriu[f][c]!=0 && t.caselles[ff+f][cf+c]!= TIPUS_FIGURA.BUIDA){
+                if(matriu[f][c]!=0 && t.caselles[ff + f][cf + c]!= TIPUS_FIGURA.BUIDA){
                     //println("OCUPADA");
                     return false;
                 }
@@ -166,6 +175,13 @@ public class Figura {
     // Mou la figura fins a baix del tot en el tauler
     void mouTopeBaix(Tauler t){
         while(mouBaix(t));
+    }
+
+    void afegirFigura(Figura f){
+        if(numFigures<maxNumFigures) {
+            figures[numFigures] = f;
+            numFigures++;
+        }
     }
 
 

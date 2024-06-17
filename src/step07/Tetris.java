@@ -51,11 +51,13 @@ public class Tetris extends PApplet {
     public void draw(){
 
         // Lògica del joc
-        if (frameCount % speed == 30) {
+        if (frameCount % speed == 0) {
+
             if(!figActual.mouBaix(t)){
-                //t.afegirFigura(figActual);
-                //t.aplica(figActual);
+                t.afegirFigura(figActual);
+                t.aplicaFigura(figActual);
                 figActual = Figura.creaFiguraRandom(this, t);
+                t.printTauler();
             }
         }
 
@@ -78,6 +80,9 @@ public class Tetris extends PApplet {
 
         // Dibuixa la figura actual
         t.dibuixaFigura(this, figActual, colorsTetris.colors);
+
+        // Dibuixa les figures bloquejades
+        t.dibuixaFigures(this, colorsTetris.colors);
 
         popMatrix();
     }
