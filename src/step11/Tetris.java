@@ -32,6 +32,7 @@ public class Tetris extends PApplet {
     // Variable de classe SoundFile
     SoundFile musicaTetris;
 
+    // Activa o desactiva la música
     boolean musicaOnOff = true;
 
     public void settings(){
@@ -181,9 +182,11 @@ public class Tetris extends PApplet {
         else if(key=='s' || key=='S'){
             musicaOnOff = !musicaOnOff;
             if(musicaOnOff){
+                // Reprodueix en bucle el so
                 musicaTetris.loop();
             }
             else {
+                // Atura la reproducció del so
                 musicaTetris.stop();
             }
         }
