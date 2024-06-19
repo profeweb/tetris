@@ -120,5 +120,20 @@ public class Tauler {
         }
     }
 
+    // Dibuixa les caselles del tauler del color corresponent
+    void dibuixaCaselles(PApplet p5, int colorBUIT, int[] colors){
+        for(int c=0; c<numCols; c++){
+            for(int f = 0; f< numFiles; f++){
+                p5.fill(colorBUIT);
+                if(caselles[f][c]!= Figura.TIPUS_FIGURA.BUIDA){
+                    int numColor = caselles[f][c].ordinal();
+                    p5.fill(colors[numColor]);
+                }
+                p5.stroke(0);
+                p5.rect(c* ampleCella, f* altCella, ampleCella, altCella);
+            }
+        }
+    }
+
 
 }

@@ -120,5 +120,56 @@ public class Tauler {
         }
     }
 
+    // Dibuixa les caselles del tauler del color corresponent
+    void dibuixaCaselles(PApplet p5, int colorBUIT, int[] colors){
+        for(int c=0; c<numCols; c++){
+            for(int f = 0; f< numFiles; f++){
+                p5.fill(colorBUIT);
+                if(caselles[f][c]!= Figura.TIPUS_FIGURA.BUIDA){
+                    int numColor = caselles[f][c].ordinal();
+                    p5.fill(colors[numColor]);
+                }
+                p5.stroke(0);
+                p5.rect(c* ampleCella, f* altCella, ampleCella, altCella);
+            }
+        }
+    }
+
+    // Determina si una fila nf té totes les caselles plenes amb alguna figura
+    boolean filaPlena(int nf){
+        for(int c = 0; c< caselles[nf].length; c++){
+            if(caselles[nf][c]== Figura.TIPUS_FIGURA.BUIDA){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Determina quines files del tauler estan completament plenes, per tal d'eliminar-les.
+    boolean[] comprovaFilesPlenes(){
+        boolean[] plenes = new boolean[caselles.length];
+        for(int nf = caselles.length -1; nf>=0; nf--){
+            plenes[nf] = filaPlena(nf);
+        }
+        return plenes;
+    }
+
+    // Baixa les figures fins una determinada fila
+    void baixarFiguresAbansDe(int numf){
+
+        // Baixar files de 0 a numF-1
+        for(int f=numf; f>0; f--){
+            for(int c = 0; c < caselles[f].length; c++){
+                caselles[f][c] = caselles[f-1][c];
+            }
+        }
+
+        // Buidar fila zero
+        for(int c = 0; c < caselles[0].length; c++){
+            caselles[0][c] = Figura.TIPUS_FIGURA.BUIDA;
+        }
+
+    }
+
 
 }

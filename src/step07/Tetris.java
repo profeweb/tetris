@@ -75,14 +75,11 @@ public class Tetris extends PApplet {
         // Es trasllada a la posició (x, y) del tauler
         translate(t.x, t.y);
 
-        // Dibuixa la graella del tauler.
-        t.dibuixaGraella(this,colorsTetris.colorBUIT);
+        // Dibuixa les caselles del tauler
+        t.dibuixaCaselles(this, colorsTetris.colorBUIT, colorsTetris.colors);
 
         // Dibuixa la figura actual
         t.dibuixaFigura(this, figActual, colorsTetris.colors);
-
-        // Dibuixa les figures bloquejades
-        t.dibuixaFigures(this, colorsTetris.colors);
 
         popMatrix();
     }

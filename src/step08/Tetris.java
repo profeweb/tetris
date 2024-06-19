@@ -22,6 +22,9 @@ public class Tetris extends PApplet {
     // Velocitat de les figures en baixar
     int speed = 30;
 
+    // Número de línies aconseguides
+    int numLinies = 0;
+
     public void settings(){
         size(800, 800);
     }
@@ -57,7 +60,18 @@ public class Tetris extends PApplet {
                 t.afegirFigura(figActual);
                 t.aplicaFigura(figActual);
                 figActual = Figura.creaFiguraRandom(this, t);
-                t.printTauler();
+                //t.printTauler();
+            }
+            else {
+                // Comprovar línies
+                boolean[] plenes = t.comprovaFilesPlenes();
+                for (int f = 0; f < plenes.length; f++) {
+                    if (plenes[f] == true) {
+                        t.baixarFiguresAbansDe(f);
+                        numLinies++;
+                        println("NUM LÍNIES: "+ numLinies);
+                    }
+                }
             }
         }
 
@@ -75,14 +89,11 @@ public class Tetris extends PApplet {
         // Es trasllada a la posició (x, y) del tauler
         translate(t.x, t.y);
 
-        // Dibuixa la graella del tauler.
-        t.dibuixaGraella(this,colorsTetris.colorBUIT);
+        // Dibuixa les caselles del tauler
+        t.dibuixaCaselles(this, colorsTetris.colorBUIT, colorsTetris.colors);
 
         // Dibuixa la figura actual
         t.dibuixaFigura(this, figActual, colorsTetris.colors);
-
-        // Dibuixa les figures bloquejades
-        t.dibuixaFigures(this, colorsTetris.colors);
 
         popMatrix();
     }
