@@ -2,9 +2,11 @@
   <library name="library">
     <CLASSES>
       <root url="file://$PROJECT_DIR$/../../../../../Program Files/processing354/processing-3.5.4/core/library" />
+      <root url="file://$PROJECT_DIR$/../../Processing/libraries/sound/library" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
     <jarDirectory url="file://$PROJECT_DIR$/../../../../../Program Files/processing354/processing-3.5.4/core/library" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../../Processing/libraries/sound/library" recursive="false" />
   </library>
 </component>

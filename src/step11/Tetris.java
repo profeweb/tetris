@@ -1,6 +1,7 @@
 package step11;
 
 import processing.core.PApplet;
+import processing.sound.*;
 
 public class Tetris extends PApplet {
 
@@ -28,6 +29,11 @@ public class Tetris extends PApplet {
     // Llista de figures generades
     LlistaFigures llistaFigs;
 
+    // Variable de classe SoundFile
+    SoundFile musicaTetris;
+
+    boolean musicaOnOff = true;
+
     public void settings(){
         size(800, 800);
     }
@@ -51,6 +57,12 @@ public class Tetris extends PApplet {
 
         // Agafa la següent figura de la llista de figures
         figActual = llistaFigs.nextFigura(this, t);
+
+        // Carrega el fitxer de so dins la variable musicaTetris
+        musicaTetris = new SoundFile(this, "tetris.mp3");
+
+        // Reprodueix la música del Tetris
+        musicaTetris.play();
 
     }
 
@@ -165,6 +177,15 @@ public class Tetris extends PApplet {
         }
         else if(key=='r' || key=='R'){
             figActual.rota();
+        }
+        else if(key=='s' || key=='S'){
+            musicaOnOff = !musicaOnOff;
+            if(musicaOnOff){
+                musicaTetris.loop();
+            }
+            else {
+                musicaTetris.stop();
+            }
         }
     }
 
