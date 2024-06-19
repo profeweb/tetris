@@ -1,6 +1,7 @@
-package step08;
+package step09;
 
 import processing.core.PApplet;
+import stepFinal.LlistaFigures;
 
 public class Tetris extends PApplet {
 
@@ -25,12 +26,15 @@ public class Tetris extends PApplet {
     // Número de línies aconseguides
     int numLinies = 0;
 
+    // Estat de la partida
+    boolean gameOver = false;
+
     public void settings(){
         size(800, 800);
     }
 
     public static void main(String[] args) {
-        PApplet.main("step08.Tetris");
+        PApplet.main("step09.Tetris");
     }
 
     public void setup(){
@@ -56,27 +60,42 @@ public class Tetris extends PApplet {
         // Lògica del joc
         if (frameCount % speed == 0) {
 
-            if(!figActual.mouBaix(t)){
-                t.afegirFigura(figActual);
-                t.aplicaFigura(figActual);
-                figActual = Figura.creaFiguraRandom(this, t);
-                //t.printTauler();
+            if (!figActual.mouBaix(t)) {
+
+                // Si la figura actual no pot baixar i està a la fila 0, s'ha acabat la partida
+                if (figActual.fila == 0) {
+                    gameOver = true;
+                }
+                // Si la figura actual no pot baixar però no està a la fila 0, s'ha de generar una nova figura
+                else {
+                    // Actualitza la nova figura
+                    t.afegirFigura(figActual);
+                    t.aplicaFigura(figActual);
+                    figActual = Figura.creaFiguraRandom(this, t);
+                    numFigures++;
+                }
             }
             else {
-                // Comprovar línies
+
+                // Comprovar linies
                 boolean[] plenes = t.comprovaFilesPlenes();
                 for (int f = 0; f < plenes.length; f++) {
                     if (plenes[f] == true) {
                         t.baixarFiguresAbansDe(f);
                         numLinies++;
-                        println("NUM LÍNIES: "+ numLinies);
                     }
                 }
             }
         }
 
-        // Dibuix dels elements del joc
-        dibuixaJOC();
+        if(gameOver){
+            // Dibuixa els resultats de la partida
+            dibuixaPantallaResultat();
+        }
+        else {
+            // Dibuix dels elements del joc
+            dibuixaJOC();
+        }
     }
 
     public void dibuixaJOC(){
@@ -96,6 +115,32 @@ public class Tetris extends PApplet {
         t.dibuixaFigura(this, figActual, colorsTetris.colors);
 
         popMatrix();
+
+        // Dibuixa estadístiques de la partida
+        fill(0); textAlign(LEFT); textSize(20);
+
+        // Número de figures col·locades en el tauler
+        text("Figures:" + numFigures, 50, 50);
+
+        // Número de línies resoltes
+        text("Línies:" + numLinies, 50, 70);
+    }
+
+    public void dibuixaPantallaResultat(){
+
+        // Dibuixa el fons
+        background(255, 100, 100);
+
+        fill(0); textAlign(CENTER); textSize(50);
+
+        // Missatge de final de partida
+        text("GAME OVER", width / 2, height / 2);
+
+        // Número de figures col·locades en el tauler
+        text("FIGURES:" + numFigures, width / 2, height / 2 + 100);
+
+        // Número de línies resoltes
+        text("LÍNIES:" + numLinies, width / 2, height / 2 + 200);
     }
 
     public void keyPressed(){

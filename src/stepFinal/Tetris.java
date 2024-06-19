@@ -76,7 +76,7 @@ public class Tetris extends PApplet {
                         t.afegirFigura(figActual);
                         t.aplica(figActual);
 
-                        // Comprovar linies
+                        // Comprovar línies
                         boolean[] plenes = t.comprovaFilesPlenes();
                         for (int f = 0; f < plenes.length; f++) {
                             if (plenes[f] == true) {
