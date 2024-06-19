@@ -98,9 +98,7 @@ public class Tetris extends PApplet {
             figActual.mouTopeBaix(t);
         }
         else if(key=='r' || key=='R'){
-            numFigures = 0;
-            t.inicialitzaCaselles();
-            figActual = Figura.creaFiguraRandom(this, t);
+            figures[0].rota();
         }
     }
 

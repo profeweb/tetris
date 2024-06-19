@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="880bcb6c-0f8b-43c1-afd8-65a3efe44e47" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/step07/Tauler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step07/Tauler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step06/Figura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step06/Figura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step06/Tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step06/Tetris.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step07/Figura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step07/Figura.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/step07/Tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step07/Tetris.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/step08/Tauler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step08/Tauler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/step08/Figura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step08/Figura.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/step08/Tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step08/Tetris.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,7 +154,7 @@
       <workItem from="1718619871643" duration="5109000" />
       <workItem from="1718692702106" duration="594000" />
       <workItem from="1718698055166" duration="1854000" />
-      <workItem from="1718777376458" duration="4390000" />
+      <workItem from="1718777376458" duration="5514000" />
     </task>
     <task id="LOCAL-00001" summary="Tetris">
       <created>1718100011974</created>
@@ -259,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718778699866</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Tetris">
+      <created>1718782485549</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1718782485550</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

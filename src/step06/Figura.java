@@ -168,5 +168,29 @@ public class Figura {
         while(mouBaix(t));
     }
 
+    // Rota la figura des del seu centre
+    void rota(){
+
+        int[][] q = this.copia();
+
+        for(int f = 0; f< matriu.length; f++){
+            for(int c = 0; c< matriu[0].length; c++){
+                matriu[f][c]=q[matriu.length - c -1][f];
+            }
+        }
+    }
+
+    // Retorna una còpia de la matriu que representa la figura
+    int[][] copia(){
+
+        int[][] q = new int[this.matriu.length][this.matriu[0].length];
+        for(int f = 0; f< matriu.length; f++){
+            for(int c = 0; c< matriu[0].length; c++){
+                q[f][c] = matriu[f][c];
+            }
+        }
+        return q;
+    }
+
 
 }
