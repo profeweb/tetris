@@ -1,4 +1,5 @@
-package stepFinal;
+package step10;
+
 
 import processing.core.PApplet;
 
@@ -14,15 +15,18 @@ public class LlistaFigures {
     // Constructor
     LlistaFigures(){
 
-        // Inicialitza el número de figures i l'array de figures
+        // Inicialitza el número de figures
         this.numFigures = 0;
+
+        // Crea l'array de figures (amb 7 caselles, una per cada tipus de figura)
         figures = new Figura.TIPUS_FIGURA[7];
 
-        // afegeix una figura de cada tipus
+        // Afegeix una figura de cada tipus a la llista
         afegeixFiguresTipus();
 
         // Mescla (5 vegades) les figures de l'array (per evitar que a cada partida, surtin les figures en el mateix ordre).
         mesclaFigures(5);
+
     }
 
     // Afegeix una figura de cada tipus a l'array
@@ -36,7 +40,7 @@ public class LlistaFigures {
 
     // Mescla les figures de l'array
     void mesclaFigures(int t){
-        int numTipus = Figura.TIPUS_FIGURA.values().length-1;
+        int numTipus = stepFinal.Figura.TIPUS_FIGURA.values().length-1;
         for(int n=0; n<t; n++){
             int numOrigen = (int) Math.floor(Math.random()*numTipus);
             int numDestí  = (int) Math.floor(Math.random()*numTipus);

@@ -17,7 +17,7 @@ public class Tetris extends PApplet {
     Figura figActual;
 
     // Llista de figures generades
-    LlistaFigures figs;
+    LlistaFigures llistaFigs;
 
     // Paleta de colors de les figures i fons.
     Colors colorsTetris;
@@ -44,10 +44,10 @@ public class Tetris extends PApplet {
         t = new Tauler(10,20, 200, 0, 400, 800);
 
         // Crea la llista de figures
-        figs = new LlistaFigures();
+        llistaFigs = new LlistaFigures();
 
         // Obté la primera figura de la llista
-        figActual = figs.nextFigura(this, t);
+        figActual = llistaFigs.nextFigura(this, t);
 
         // Genera la paleta de colors a utilitzar per dibuixar els elements visuals
         colorsTetris = new Colors(this);
@@ -86,12 +86,12 @@ public class Tetris extends PApplet {
                         }
 
                         // Obté una nova figura de la llista de figures
-                        if (figs.isEmpty()) {
+                        if (llistaFigs.estaBuida()) {
                             // Si la llista està buida, la torna emplenar
-                            figs = new LlistaFigures();
+                            llistaFigs = new LlistaFigures();
                         }
                         // Actualitza la nova figura
-                        figActual = figs.nextFigura(this, t);
+                        figActual = llistaFigs.nextFigura(this, t);
 
                     }
                 }
