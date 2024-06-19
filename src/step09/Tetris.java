@@ -58,7 +58,7 @@ public class Tetris extends PApplet {
     public void draw(){
 
         // Lògica del joc
-        if (frameCount % speed == 0) {
+        if (!gameOver && frameCount % speed == 0) {
 
             if (!figActual.mouBaix(t)) {
 
