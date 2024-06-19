@@ -1,6 +1,7 @@
 package stepFinal;
 
 import processing.core.PApplet;
+import processing.sound.SoundFile;
 
 public class Tetris extends PApplet {
 
@@ -31,6 +32,12 @@ public class Tetris extends PApplet {
     // Velocitat de les figures en baixar
     int speed = 30;
 
+    // Variable de classe SoundFile
+    SoundFile musicaTetris;
+
+    // Activa o desactiva la música
+    boolean musicaOnOff = true;
+
     public void settings(){
         size(800, 800);
     }
@@ -51,6 +58,12 @@ public class Tetris extends PApplet {
 
         // Genera la paleta de colors a utilitzar per dibuixar els elements visuals
         colorsTetris = new Colors(this);
+
+        // Carrega el fitxer de so dins la variable musicaTetris
+        musicaTetris = new SoundFile(this, "tetris.mp3");
+
+        // Reprodueix la música del Tetris
+        musicaTetris.play();
     }
 
     public void draw(){
@@ -161,6 +174,17 @@ public class Tetris extends PApplet {
         }
         else if(key=='b' || key=='B'){
             figActual.mouTopeBaix(t);
+        }
+        else if(key=='s' || key=='S'){
+            musicaOnOff = !musicaOnOff;
+            if(musicaOnOff){
+                // Reprodueix en bucle el so
+                musicaTetris.loop();
+            }
+            else {
+                // Atura la reproducció del so
+                musicaTetris.stop();
+            }
         }
     }
 }

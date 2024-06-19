@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="880bcb6c-0f8b-43c1-afd8-65a3efe44e47" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/step11/Tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/step11/Tetris.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/library1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/library.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/library.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TetrisPOO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TetrisPOO.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stepFinal/Tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stepFinal/Tetris.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +41,8 @@
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Users/tonim/Documents/Processing/libraries/sound/library",
     "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
@@ -150,7 +155,7 @@
       <workItem from="1718692702106" duration="594000" />
       <workItem from="1718698055166" duration="1854000" />
       <workItem from="1718777376458" duration="14201000" />
-      <workItem from="1718798626297" duration="1465000" />
+      <workItem from="1718798626297" duration="3982000" />
     </task>
     <task id="LOCAL-00001" summary="Tetris">
       <created>1718100011974</created>
@@ -306,7 +311,14 @@
       <option name="project" value="LOCAL" />
       <updated>1718799506282</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Tetris">
+      <created>1718800270858</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1718800270858</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
