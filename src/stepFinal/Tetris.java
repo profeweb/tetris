@@ -43,7 +43,7 @@ public class Tetris extends PApplet {
     }
 
     public static void main(String[] args) {
-        PApplet.main("step05.Tetris");
+        PApplet.main("stepFinal.Tetris");
     }
 
     public void setup(){
